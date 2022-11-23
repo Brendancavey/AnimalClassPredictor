@@ -1,14 +1,18 @@
-from flask import Flask
+from flask import Flask, render_template, request, flash
 
 app = Flask(__name__)
+app.secret_key = "my_secret_key"
 
-@app.route('/')
+@app.route('/animalpredictor')
 def index():
-    return 'This is the homepage'
+    flash("What animal do you see yourself as?...")
+    return render_template("index.html")
 
-@app.route('/tuna')
-def tuna():
-    return '<h2>Tuna is tasty</h2>'
+@app.route('/prediction', methods=["POST", "GET"])
+def predict():
+    flash("A " + str(request.form['name_input']) + "? That sounds amazing!")
+    return render_template("index.html")
+
 
 @app.route('/profile/<username>')
 def profile(username):

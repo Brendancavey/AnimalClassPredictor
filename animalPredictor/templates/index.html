@@ -7,8 +7,10 @@
     <body>
         <img src="pexels-pixabay-45170.jpg">
         <br>
-        <form action="greet" method="post">
-            <p>What animal do you see yourself as?...</p>
+        <form action="prediction" method="post">
+            {% for message in get_flashed_messages()%}
+                <p>{{message}}</p>
+            {% endfor %}
             <br>
             <input type="text" name="name_input">
             <br>
