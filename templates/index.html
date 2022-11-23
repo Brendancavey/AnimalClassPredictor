@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
     </head>
     <body>
-        <img src="pexels-pixabay-45170.jpg">
+        <img src="images/cats.jpg">
         <br>
         <form action="prediction" method="post">
             {% for message in get_flashed_messages()%}
@@ -15,6 +15,12 @@
             <br>
             <input type="text" name="name_input">
             <br>
+            Hair Hair<input type="checkbox" value="0" name="animalfeatures">
+            Has Feathers<input type="checkbox" value="1" name="animalfeatures">
+            Produces Eggs<input type="checkbox" value="2" name="animalfeatures">
+            Produces Milk<input type="checkbox" value="3" name="animalfeatures">
+
+
             <input type="submit" value="Predict" id="predict">
         </form>
     </body>
