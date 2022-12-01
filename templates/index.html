@@ -6,14 +6,12 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
     </head>
     <body>
-        <img src="images/cats.jpg">
+        <!--<img src="images/cats.jpg">-->
         <br>
         <form action="prediction" method="post">
             {% for message in get_flashed_messages()%}
                 <p>{{message}}</p>
             {% endfor %}
-            <br>
-            <input type="text" name="name_input">
             <br>
             Hair Hair<input type="checkbox" value="0" name="animalfeatures">
             Has Feathers<input type="checkbox" value="1" name="animalfeatures">
