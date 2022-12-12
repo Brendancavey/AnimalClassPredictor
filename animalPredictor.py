@@ -7,6 +7,16 @@ app.secret_key = "my_secret_key"
 
 #import trained ML model created from jupyter notebook
 model = joblib.load('animal_type_predictor')
+
+#curated list of different animals for predicted output
+mammals = ["Monkey", "Lion", "Bear"]
+birds = ["Tucan", "Eagle", "Flamingo"]
+reptiles = ["Snake", "Lizard", "Chameleon"]
+fish = ["Tuna", "Bass", "Dogfish"]
+amphibians = ["Frog", "Toad", "Newt"]
+bugs = ["Moth", "Bee", "Beetle"]
+invertebrates = ["Lobster", "Octopus", "Scorpion"]
+
 @app.route('/animalpredictor')
 def index():
 
@@ -29,23 +39,31 @@ def predict():
     print(pred_bool_list)
     print(list)
     prediction = model.predict([pred_bool_list]) #using imported model from Jupyter Notebooks to make prediction
-    flash("You are most likely a " + prediction[0] + "!") #prediction is the 0th index in the list
+    flash("You are most likely a(n) " + prediction[0] + "!") #prediction is the 0th index in the list
+    hidden_msg = "Animals to check out!"
     if (prediction[0] == "Mammal"):
-        print("hi mammal")
+        animal_list = mammals
+        webpage = "https://en.wikipedia.org/wiki/Mammal"
     if (prediction[0] == "Bird"):
-        print("hi bird")
+        animal_list = birds
+        webpage = "https://en.wikipedia.org/wiki/Bird"
     if (prediction[0] == "Reptile"):
-        print("hi reptile")
+        animal_list = reptiles
+        webpage = "https://en.wikipedia.org/wiki/Reptile"
     if (prediction[0] == "Fish"):
-        print("fish")
+        animal_list = fish
+        webpage = "https://en.wikipedia.org/wiki/Fish"
     if (prediction[0] == "Amphibian"):
-        print("amphi")
+        animal_list = amphibians
+        webpage = "https://en.wikipedia.org/wiki/Amphibian"
     if (prediction[0] == "Bug"):
-        print("bug")
+        animal_list = bugs
+        webpage = "https://en.wikipedia.org/wiki/Insect"
     if (prediction[0] == "Invertebrate"):
-        print("invert")
+        animal_list = invertebrates
+        webpage = "https://en.wikipedia.org/wiki/Invertebrate"
     print(request.form.get("legs"))
-    return render_template("index.html")
+    return render_template("index.html", predicted_list = animal_list, link = webpage, reveal_msg = hidden_msg)
 
 
 

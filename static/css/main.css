@@ -38,3 +38,28 @@ input:focus {
     background-color: forestgreen;
     cursor: pointer;
 }
+
+#link{
+    color: GreenYellow;
+    font-family: arial;
+    font-size: 1.6em;
+}
+legend{
+    color: white;
+    font-size: 1.6em;
+
+}
+dl{
+    list-style: none;
+    font-size: 1.0em;
+    font-family: arial;
+}
+
+li{
+    margin: 22px;
+    display: inline;
+}
+fieldset{
+    background-color: LightSlateGrey;
+    margin: 20px;
+}
