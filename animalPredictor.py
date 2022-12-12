@@ -9,7 +9,7 @@ app.secret_key = "my_secret_key"
 model = joblib.load('animal_type_predictor')
 @app.route('/animalpredictor')
 def index():
-    flash("What type of animal are you? Pick your qualities below!")
+
     return render_template("index.html")
 
 @app.route('/prediction', methods=["POST"])
@@ -30,8 +30,23 @@ def predict():
     print(list)
     prediction = model.predict([pred_bool_list]) #using imported model from Jupyter Notebooks to make prediction
     flash("You are most likely a " + prediction[0] + "!") #prediction is the 0th index in the list
+    if (prediction[0] == "Mammal"):
+        print("hi mammal")
+    if (prediction[0] == "Bird"):
+        print("hi bird")
+    if (prediction[0] == "Reptile"):
+        print("hi reptile")
+    if (prediction[0] == "Fish"):
+        print("fish")
+    if (prediction[0] == "Amphibian"):
+        print("amphi")
+    if (prediction[0] == "Bug"):
+        print("bug")
+    if (prediction[0] == "Invertebrate"):
+        print("invert")
     print(request.form.get("legs"))
     return render_template("index.html")
+
 
 
 @app.route('/profile/<username>')

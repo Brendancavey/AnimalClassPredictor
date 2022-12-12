@@ -9,39 +9,47 @@
         <!--<img src="images/cats.jpg">-->
         <br>
         <form action="prediction" method="post">
+            <p>What type of animal are you? Pick your qualities below!</p>
+            <br>
+            <fieldset>
+                <legend>Choose your animal qualities</legend>
+                <p>(Check all boxes that apply)</p>
+                Hair Hair<input type="checkbox" value="0" name="animalfeatures">
+                Has Feathers<input type="checkbox" value="1" name="animalfeatures">
+                Produces Eggs<input type="checkbox" value="2" name="animalfeatures">
+                Produces Milk<input type="checkbox" value="3" name="animalfeatures">
+                Is Airborne<input type="checkbox" value="4" name="animalfeatures">
+                Is Aquatic<input type="checkbox" value="5" name="animalfeatures">
+                Is a Predator<input type="checkbox" value="6" name="animalfeatures">
+                Has Teeth<input type="checkbox" value="7" name="animalfeatures">
+                Has a Backbone<input type="checkbox" value="8" name="animalfeatures">
+                Breathes<input type="checkbox" value="9" name="animalfeatures">
+                Is Venomous<input type="checkbox" value="10" name="animalfeatures">
+                Has Fins<input type="checkbox" value="11" name="animalfeatures">
+                <!--Has Legs<input type="checkbox" value="12" name="animalfeatures">-->
+                <label for="legs">How Many Legs:</label>
+                <select name="legs" id="legs">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                Has a Tail<input type="checkbox" value="13" name="animalfeatures">
+                Is Domestic<input type="checkbox" value="14" name="animalfeatures">
+                Shape of a Cat<input type="checkbox" value="15" name="animalfeatures">
+            </fieldset>
+            <br>
+            <input type="submit" value="Predict" id="predict">
+        </form>
+        <!--After prediction is made -->
+        <form>
             {% for message in get_flashed_messages()%}
                 <p>{{message}}</p>
             {% endfor %}
             <br>
-            Hair Hair<input type="checkbox" value="0" name="animalfeatures">
-            Has Feathers<input type="checkbox" value="1" name="animalfeatures">
-            Produces Eggs<input type="checkbox" value="2" name="animalfeatures">
-            Produces Milk<input type="checkbox" value="3" name="animalfeatures">
-            Is Airborne<input type="checkbox" value="4" name="animalfeatures">
-            Is Aquatic<input type="checkbox" value="5" name="animalfeatures">
-            Is a Predator<input type="checkbox" value="6" name="animalfeatures">
-            Has Teeth<input type="checkbox" value="7" name="animalfeatures">
-            Has a Backbone<input type="checkbox" value="8" name="animalfeatures">
-            Breathes<input type="checkbox" value="9" name="animalfeatures">
-            Is Venomous<input type="checkbox" value="10" name="animalfeatures">
-            Has Fins<input type="checkbox" value="11" name="animalfeatures">
-            <!--Has Legs<input type="checkbox" value="12" name="animalfeatures">-->
-            <label for="legs">How Many Legs:</label>
-            <select name="legs" id="legs">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-            </select>
-            Has a Tail<input type="checkbox" value="13" name="animalfeatures">
-            Is Domestic<input type="checkbox" value="14" name="animalfeatures">
-            Shape of a Cat<input type="checkbox" value="15" name="animalfeatures">
 
 
-
-
-            <input type="submit" value="Predict" id="predict">
         </form>
     </body>
 </html>
