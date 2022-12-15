@@ -63,3 +63,7 @@ fieldset{
     background-color: LightSlateGrey;
     margin: 20px;
 }
+img{
+    width: 500px;
+    height: 500px;
+}

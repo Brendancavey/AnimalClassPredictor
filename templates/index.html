@@ -62,6 +62,16 @@
                     <li>{{animal}}</li>
                 {% endfor %}
             </fieldset>
+            <br>
+            <fieldset>
+                <legend>
+                    Data used to make your prediction
+                </legend>
+                {% if milk %}
+                    <img src="/static/images/milk.png">
+                {% endif %}
+                <img src="/static/images/count.png">
+            </fieldset>
 
 
         </form>

@@ -24,7 +24,6 @@ def index():
 
 @app.route('/prediction', methods=["POST"])
 def predict():
-    #flash("A " + str(request.form['name_input']) + "? That sounds amazing!")
     list = request.form.getlist("animalfeatures")
     animal_features_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
     pred_bool_list = [] #empty list that will be used to make the prediction. Model only recognizes 1s and 0s as true false values in the order of the animal features list.
@@ -41,6 +40,7 @@ def predict():
     prediction = model.predict([pred_bool_list]) #using imported model from Jupyter Notebooks to make prediction
     flash("You are most likely a(n) " + prediction[0] + "!") #prediction is the 0th index in the list
     hidden_msg = "Animals to check out!"
+    #Checking for condition to link predicted output to more information via wiki
     if (prediction[0] == "Mammal"):
         animal_list = mammals
         webpage = "https://en.wikipedia.org/wiki/Mammal"
@@ -63,9 +63,31 @@ def predict():
         animal_list = invertebrates
         webpage = "https://en.wikipedia.org/wiki/Invertebrate"
     print(request.form.get("legs"))
-    return render_template("index.html", predicted_list = animal_list, link = webpage, reveal_msg = hidden_msg)
 
-
+    #checking for condition verify which checkboxes were selected to output
+    #most meaningful graph charts
+    bool_list = [False] * len(pred_bool_list) #true/false value list to compare to prediction_bool_list
+    #for i in range(0, len(pred_bool_list)-1):
+     #   bool_list[i] = False
+    for i in range(0, len(pred_bool_list)):
+        if (pred_bool_list[i] == 1):
+            bool_list[i] = True
+    print(bool_list)
+    return render_template("index.html", predicted_list = animal_list, link = webpage, reveal_msg = hidden_msg,
+                           hair = bool_list[0],
+                           feathers = bool_list[1],
+                           eggs = bool_list[2],
+                           milk = bool_list[3],
+                           airborne = bool_list[4],
+                           aquatic = bool_list[5],
+                           predator = bool_list[6],
+                           teeth = bool_list[7],
+                           backbone = bool_list[8],
+                           breathes = bool_list[9],
+                           venomous = bool_list[10],
+                           fins = bool_list[11],
+                           tail = bool_list[13],
+                           domestic = bool_list[14])
 
 @app.route('/profile/<username>')
 def profile(username):
