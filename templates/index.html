@@ -13,35 +13,96 @@
             <fieldset>
                 <legend>Choose your animal qualities</legend>
                 <p>(Check all boxes that apply)</p>
-                <dl>
-                    <li>Hair Hair<input type="checkbox" value="0" name="animalfeatures">
-                    <li>Has Feathers<input type="checkbox" value="1" name="animalfeatures">
-                    <li>Produces Eggs<input type="checkbox" value="2" name="animalfeatures">
-                    <li>Produces Milk<input type="checkbox" value="3" name="animalfeatures">
-                    <li>Is Airborne<input type="checkbox" value="4" name="animalfeatures">
-                    <li>Is Aquatic<input type="checkbox" value="5" name="animalfeatures">
-                    <li>Is a Predator<input type="checkbox" value="6" name="animalfeatures">
-                    <li>Has Teeth<input type="checkbox" value="7" name="animalfeatures">
-                    <li>Has a Backbone<input type="checkbox" value="8" name="animalfeatures">
-                    <li>Breathes<input type="checkbox" value="9" name="animalfeatures">
-                    <li>Is Venomous<input type="checkbox" value="10" name="animalfeatures">
-                    <li>Has Fins<input type="checkbox" value="11" name="animalfeatures">
-                    <li><label for="legs">How Many Legs:</label>
-                    <select name="legs" id="legs">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                    </select>
-                    <li>Has a Tail<input type="checkbox" value="13" name="animalfeatures">
-                    <li>Is Domestic<input type="checkbox" value="14" name="animalfeatures">
-                    <li>Shape of a Cat<input type="checkbox" value="15" name="animalfeatures">
-                </dl>
+
+                    <div id="animalfeatures">
+                        <label for="hair" >Has Hair</label>
+                        <p>Yes<input type="radio" value="1" name="0" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="0" ></p>
+                    </div>
+                    <div>
+                        <label for="feathers">Has Feathers</label>
+                        <p>Yes<input type="radio" value="1" name="1" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="1"></p>
+                    </div>
+                    <div>
+                        <label for="eggs">Produces Eggs</label>
+                        <p>Yes<input type="radio" value="1" name="2" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="2"></p>
+                    </div>
+                    <div>
+                        <label for="milk">Produces Milk</label>
+                        <p>Yes<input type="radio" value="1" name="3" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="3"></p>
+                    </div>
+                    <div>
+                        <label for="airborne">Is Airborne</label>
+                        <p>Yes<input type="radio" value="1" name="4" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="4"></p>
+                    </div>
+                    <div>
+                        <label for="aquatic">Is Aquatic</label>
+                        <p>Yes<input type="radio" value="1" name="5" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="5"></p>
+                    </div>
+                    <div>
+                        <label for="predator">Is a Predator</label>
+                        <p>Yes<input type="radio" value="1" name="6" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="6"></p>
+                    </div>
+                    <div>
+                        <label for="teeth">Has Teeth</label>
+                        <p>Yes<input type="radio" value="1" name="7" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="7"></p>
+                    </div>
+                    <div>
+                        <label for="backbone">Has a Backbone</label>
+                        <p>Yes<input type="radio" value="1" name="8" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="8"></p>
+                    </div>
+                    <div>
+                        <label for="breathes">Breathes Air</label>
+                        <p>Yes<input type="radio" value="1" name="9" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="9"></p>
+                    </div>
+                    <div>
+                        <label for="venomous">Is Venomous</label>
+                        <p>Yes<input type="radio" value="1" name="10" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="10"></p>
+                    </div>
+                    <div>
+                        <label for="fins">Has Fins</label>
+                        <p>Yes<input type="radio" value="1" name="11" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="11"></p>
+                    </div>
+                    <div>
+                        <label for="legs">How Many Legs:</label>
+                        <select name="legs" id="legs">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="tail">Has a Tail</label>
+                        <p>Yes<input type="radio" value="1" name="13" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="13"></p>
+                    </div>
+                    <div>
+                        <label for="domestic">Is Domestic</label>
+                        <p>Yes<input type="radio" value="1" name="14" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="14"></p>
+                    </div>
+                    <div>
+                        <label for="catsize">Is Catsize</label>
+                        <p>Yes<input type="radio" value="1" name="15" checked="checked"></p>
+                        <p>No<input type="radio" value= "0" name="15"></p>
+                    </div>
             </fieldset>
             <br>
             <input type="submit" value="Predict" id="predict">
@@ -69,74 +130,62 @@
                 {% if hair %}
                     <!--<img src="/static/images/hair.png">-->
                     <li>Has Hair</li>
-                {% else %}
-                    <li>Has No Hair</li>
+
                 {% endif %}
                 {% if feathers %}
                     <!--<img src="/static/images/feathers.png">-->
                      <li>Has Feathers</li>
-                {% else %}
-                    <li>Has No Feathers</li>
+
                 {% endif %}
                 {% if eggs %}
                     <!--<img src="/static/images/eggs.png">-->
                      <li>Produces Eggs</li>
-                {% else %}
-                    <li>Produces No Eggs</li>
+
                 {% endif %}
                 {% if milk %}
                     <!--<img src="/static/images/milk.png">-->
                      <li>Produces Milk</li>
-                {% else %}
-                    <li>Produces No Milk</li>
+
                 {% endif %}
                 {% if airborne %}
                     <!--<img src="/static/images/airborne.png">-->
                      <li>Can Fly</li>
-                {% else %}
-                    <li>Cannot Fly</li>
+
                 {% endif %}
                 {% if aquatic %}
                     <!--<img src="/static/images/aquatic.png">-->
                      <li>Is Aquatic </li>
-                {% else %}
-                    <li>Is Not Aquatic</li>
+
                 {% endif %}
                 {% if predator %}
                     <!--<img src="/static/images/predator.png">-->
                      <li>Is A Predator</li>
-                {% else %}
-                    <li>Is Not A Predator</li>
+
                 {% endif %}
                 {% if teeth %}
                     <!--<img src="/static/images/toothed.png">-->
                      <li>Has Teeth</li>
-                {% else %}
-                    <li>Does Not Have Teeth</li>
+
                 {% endif %}
                 {% if backbone %}
                     <!--<img src="/static/images/backbone.png">-->
                      <li>Has A Backbone</li>
-                {% else %}
-                    <li>Does Not Have Backbone</li>
+
                 {% endif %}
                 {% if breathes %}
                     <!--<img src="/static/images/breathes.png">-->
-                     <li>Can Breathe Oxygen</li>
-                {% else %}
-                    <li>Does Not Breathe Oxygen</li>
+                     <li>Can Breathe Air</li>
+
                 {% endif %}
                 {% if venomous %}
                     <!--<img src="/static/images/venomous.png">-->
                      <li>Is Venomous</li>
-                {% else %}
-                    <li>Is Not Venomous</li>
+
                 {% endif %}
                 {% if fins %}
                     <!--<img src="/static/images/fins.png">-->
                      <li>Has Fins</li>
-                {% else %}
-                    <li>Has No Fins</li>
+
                 {% endif %}
 
                      <li>Has {{legs}} legs</li>
@@ -145,20 +194,17 @@
                 {% if tail %}
                     <!--<img src="/static/images/tail.png">-->
                      <li>Has Tail</li>
-                {% else %}
-                    <li>Has No Tail</li>
+
                 {% endif %}
                 {% if domestic %}
                     <!--<img src="/static/images/domestic.png">-->
                      <li>Is Domestic</li>
-                {% else %}
-                    <li>Is Not Domestic</li>
+
                 {% endif %}
                 {% if catsize %}
                     <!--<img src="/static/images/domestic.png">-->
                      <li>Is Catsize</li>
-                {% else %}
-                    <li>Is Not Catsize</li>
+
                 {% endif %}
             </fieldset>
             {% endif %}
@@ -192,10 +238,10 @@
                 <img src="/static/images/breathes.png">
                 <img src="/static/images/venomous.png">
                 <img src="/static/images/fins.png">
-                <img src="/static/images/legs.jpg">
+                <img src="/static/images/legs.png">
                 <img src="/static/images/tail.png">
                 <img src="/static/images/domestic.png">
-                <img src="/static/images/catsize.jpg">
+                <img src="/static/images/catsize.png">
                 {% endif %}
             </fieldset>
     </body>
