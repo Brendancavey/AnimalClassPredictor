@@ -138,6 +138,10 @@
                 {% else %}
                     <li>Has No Fins</li>
                 {% endif %}
+
+                     <li>Has {{legs}} legs</li>
+
+
                 {% if tail %}
                     <!--<img src="/static/images/tail.png">-->
                      <li>Has Tail</li>
@@ -149,6 +153,12 @@
                      <li>Is Domestic</li>
                 {% else %}
                     <li>Is Not Domestic</li>
+                {% endif %}
+                {% if catsize %}
+                    <!--<img src="/static/images/domestic.png">-->
+                     <li>Is Catsize</li>
+                {% else %}
+                    <li>Is Not Catsize</li>
                 {% endif %}
             </fieldset>
             {% endif %}
@@ -163,6 +173,12 @@
                 <legend>
                     Data used to make your prediction
                 </legend>
+                <fieldset>
+                    <p>Predicted output was generated using a machine learning algorithm on a dataset containing various animals.</p>
+                    <p>The total number of animals in our dataset can be seen in the top left graph.</p>
+                    <p>Graphs with Y-Values between 0 - 1 represent the liklihood an animal in our dataset contains that quality.</p>
+                    <p>The Y-Values found in the leg graph represents the average number of legs contained within our dataset.</p>
+                </fieldset>
                 <img src='/static/images/count.png'>
                 <img src="/static/images/hair.png">
                 <img src="/static/images/feathers.png">
@@ -176,8 +192,10 @@
                 <img src="/static/images/breathes.png">
                 <img src="/static/images/venomous.png">
                 <img src="/static/images/fins.png">
+                <img src="/static/images/legs.jpg">
                 <img src="/static/images/tail.png">
                 <img src="/static/images/domestic.png">
+                <img src="/static/images/catsize.jpg">
                 {% endif %}
             </fieldset>
     </body>

@@ -87,8 +87,10 @@ def predict():
                            breathes = bool_list[9],
                            venomous = bool_list[10],
                            fins = bool_list[11],
+                           legs = pred_bool_list[12],
                            tail = bool_list[13],
-                           domestic = bool_list[14])
+                           domestic = bool_list[14],
+                           catsize = bool_list[15])
 
 @app.route('/learnmore', methods=["POST"])
 def learnmore():
