@@ -17,6 +17,7 @@ amphibians = ["Frog", "Toad", "Newt"]
 bugs = ["Moth", "Bee", "Beetle"]
 invertebrates = ["Lobster", "Octopus", "Scorpion"]
 
+
 @app.route('/animalpredictor')
 def index():
 
@@ -24,9 +25,11 @@ def index():
 
 @app.route('/prediction', methods=["POST"])
 def predict():
-    list = request.form.getlist("animalfeatures")
+    list = request.form.getlist("animalfeatures") #gets the values from the checkboxes user selected
     animal_features_list = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
-    pred_bool_list = [] #empty list that will be used to make the prediction. Model only recognizes 1s and 0s as true false values in the order of the animal features list.
+
+    # lists for machine learning model
+    pred_bool_list = []  # empty list that will be used to make the prediction. Model only recognizes 1s and 0s as true false values in the order of the animal features list.
 
     for i in range(0, len(animal_features_list)):
         if animal_features_list[i] == "12": #using dropdown menu for number of legs value. 12 corresponds to num of legs in features list
@@ -64,16 +67,14 @@ def predict():
         webpage = "https://en.wikipedia.org/wiki/Invertebrate"
     print(request.form.get("legs"))
 
-    #checking for condition verify which checkboxes were selected to output
-    #most meaningful graph charts
-    bool_list = [False] * len(pred_bool_list) #true/false value list to compare to prediction_bool_list
-    #for i in range(0, len(pred_bool_list)-1):
-     #   bool_list[i] = False
+    # checking for condition verify which checkboxes were selected to output
+    # most meaningful graph charts
+    bool_list = [False] * len(pred_bool_list)  # true/false value list to compare to prediction_bool_list
     for i in range(0, len(pred_bool_list)):
         if (pred_bool_list[i] == 1):
             bool_list[i] = True
     print(bool_list)
-    return render_template("index.html", predicted_list = animal_list, link = webpage, reveal_msg = hidden_msg,
+    return render_template("index.html", predicted_list = animal_list, link = webpage, reveal_msg = hidden_msg, predicted_animal = prediction[0], data_button = True, reveal_traits = True,
                            hair = bool_list[0],
                            feathers = bool_list[1],
                            eggs = bool_list[2],
@@ -89,6 +90,9 @@ def predict():
                            tail = bool_list[13],
                            domestic = bool_list[14])
 
+@app.route('/learnmore', methods=["POST"])
+def learnmore():
+    return render_template("index.html", reveal_data=True)
 @app.route('/profile/<username>')
 def profile(username):
     return "Hey there %s" % username

@@ -6,7 +6,6 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
     </head>
     <body>
-        <!--<img src="images/cats.jpg">-->
         <br>
         <form action="prediction" method="post">
             <p>What type of animal are you? Pick your qualities below!</p>
@@ -49,7 +48,7 @@
             <br>
         </form>
         <!--After prediction is made -->
-        <form>
+        <form action="learnmore" method="post">
             {% for message in get_flashed_messages()%}
                 <a href="{{link}}" target = "_blank" id="link">{{message}}</a>
             {% endfor %}
@@ -63,17 +62,123 @@
                 {% endfor %}
             </fieldset>
             <br>
+            {% if reveal_traits %}
+            <fieldset>
+                <legend>Chosen Traits</legend>
+
+                {% if hair %}
+                    <!--<img src="/static/images/hair.png">-->
+                    <li>Has Hair</li>
+                {% else %}
+                    <li>Has No Hair</li>
+                {% endif %}
+                {% if feathers %}
+                    <!--<img src="/static/images/feathers.png">-->
+                     <li>Has Feathers</li>
+                {% else %}
+                    <li>Has No Feathers</li>
+                {% endif %}
+                {% if eggs %}
+                    <!--<img src="/static/images/eggs.png">-->
+                     <li>Produces Eggs</li>
+                {% else %}
+                    <li>Produces No Eggs</li>
+                {% endif %}
+                {% if milk %}
+                    <!--<img src="/static/images/milk.png">-->
+                     <li>Produces Milk</li>
+                {% else %}
+                    <li>Produces No Milk</li>
+                {% endif %}
+                {% if airborne %}
+                    <!--<img src="/static/images/airborne.png">-->
+                     <li>Can Fly</li>
+                {% else %}
+                    <li>Cannot Fly</li>
+                {% endif %}
+                {% if aquatic %}
+                    <!--<img src="/static/images/aquatic.png">-->
+                     <li>Is Aquatic </li>
+                {% else %}
+                    <li>Is Not Aquatic</li>
+                {% endif %}
+                {% if predator %}
+                    <!--<img src="/static/images/predator.png">-->
+                     <li>Is A Predator</li>
+                {% else %}
+                    <li>Is Not A Predator</li>
+                {% endif %}
+                {% if teeth %}
+                    <!--<img src="/static/images/toothed.png">-->
+                     <li>Has Teeth</li>
+                {% else %}
+                    <li>Does Not Have Teeth</li>
+                {% endif %}
+                {% if backbone %}
+                    <!--<img src="/static/images/backbone.png">-->
+                     <li>Has A Backbone</li>
+                {% else %}
+                    <li>Does Not Have Backbone</li>
+                {% endif %}
+                {% if breathes %}
+                    <!--<img src="/static/images/breathes.png">-->
+                     <li>Can Breathe Oxygen</li>
+                {% else %}
+                    <li>Does Not Breathe Oxygen</li>
+                {% endif %}
+                {% if venomous %}
+                    <!--<img src="/static/images/venomous.png">-->
+                     <li>Is Venomous</li>
+                {% else %}
+                    <li>Is Not Venomous</li>
+                {% endif %}
+                {% if fins %}
+                    <!--<img src="/static/images/fins.png">-->
+                     <li>Has Fins</li>
+                {% else %}
+                    <li>Has No Fins</li>
+                {% endif %}
+                {% if tail %}
+                    <!--<img src="/static/images/tail.png">-->
+                     <li>Has Tail</li>
+                {% else %}
+                    <li>Has No Tail</li>
+                {% endif %}
+                {% if domestic %}
+                    <!--<img src="/static/images/domestic.png">-->
+                     <li>Is Domestic</li>
+                {% else %}
+                    <li>Is Not Domestic</li>
+                {% endif %}
+            </fieldset>
+            {% endif %}
+
+            {% if data_button %}
+                <input type="submit" value="Learn more about how we predicted {{predicted_animal}}!" id="learnmore">
+            {% endif %}
+
+        </form>
+            {% if reveal_data %}
             <fieldset>
                 <legend>
                     Data used to make your prediction
                 </legend>
-                {% if milk %}
-                    <img src="/static/images/milk.png">
+                <img src='/static/images/count.png'>
+                <img src="/static/images/hair.png">
+                <img src="/static/images/feathers.png">
+                <img src="/static/images/eggs.png">
+                <img src="/static/images/milk.png">
+                <img src="/static/images/airborne.png">
+                <img src="/static/images/aquatic.png">
+                <img src="/static/images/predator.png">
+                <img src="/static/images/toothed.png">
+                <img src="/static/images/backbone.png">
+                <img src="/static/images/breathes.png">
+                <img src="/static/images/venomous.png">
+                <img src="/static/images/fins.png">
+                <img src="/static/images/tail.png">
+                <img src="/static/images/domestic.png">
                 {% endif %}
-                <img src="/static/images/count.png">
             </fieldset>
-
-
-        </form>
     </body>
 </html>
