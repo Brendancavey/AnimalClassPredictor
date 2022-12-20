@@ -1,7 +1,7 @@
 # AnimalClassPredictor
 Machine learning demo to predict animal class types based on features.
 <br>
-<b><a href="https://animalclasspredictor.herokuapp.com/animalpredictor">Application Demo</a></b>
+<b><a href="https://animalclasspredictor.herokuapp.com/animalpredictor" target="_blank">Application Demo</a></b>
 
 <h2>Description</h2>
 This web-application predicts the most likely animal kingdom an animal belongs to that contains the selected features. Users are able to select different features on the
