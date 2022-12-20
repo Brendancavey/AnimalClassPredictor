@@ -22,3 +22,12 @@ algorithm called random forest, and was performed on a dataset containing 214 an
   <li>Pycharm 2022.2</li>
   <li>Jupyter Notebook</li>
 </ul>
+
+<h2>Application Walk-Through</h2>
+<p align="center">Answer all yes/no questions and click on predict</p>
+
+![](static/images/preview.JPG)
+
+<p align="center">View results. Click results to learn more via Wiki</p>
+
+![](static/images/preview2.JPG)
