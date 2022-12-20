@@ -5,15 +5,16 @@ from flask import Flask, render_template, request, flash
 app = Flask(__name__)
 app.secret_key = "my_secret_key"
 
+
 #import trained ML model created from jupyter notebook
 model = joblib.load('animal_type_predictor')
 
 #curated list of different animals for predicted output
 mammals = ["Monkey", "Lion", "Bear"]
 birds = ["Tucan", "Eagle", "Flamingo"]
-reptiles = ["Snake", "Lizard", "Chameleon"]
-fish = ["Tuna", "Bass", "Dogfish"]
-amphibians = ["Frog", "Toad", "Newt"]
+reptiles = ["Snake", "Aligator", "Chameleon"]
+fish = ["Clownfish", "SiameseFightingFish", "BlueDiscus"]
+amphibians = ["Frog", "Salamander", "Newt"]
 bugs = ["Moth", "Bee", "Beetle"]
 invertebrates = ["Lobster", "Octopus", "Scorpion"]
 
@@ -69,26 +70,28 @@ def predict():
     print(bool_list)
 
     return render_template("index.html", predicted_list = animal_list, link = webpage, reveal_msg = hidden_msg, predicted_animal = prediction[0], data_button = True, reveal_traits = True,
-                           hair = bool_list[0],
-                           feathers = bool_list[1],
-                           eggs = bool_list[2],
-                           milk = bool_list[3],
-                           airborne = bool_list[4],
-                           aquatic = bool_list[5],
-                           predator = bool_list[6],
-                           teeth = bool_list[7],
-                           backbone = bool_list[8],
-                           breathes = bool_list[9],
-                           venomous = bool_list[10],
-                           fins = bool_list[11],
-                           legs = user_answers[12],
-                           tail = bool_list[13],
-                           domestic = bool_list[14],
-                           catsize = bool_list[15])
+                           hair=bool_list[0],
+                           feathers=bool_list[1],
+                           eggs=bool_list[2],
+                           milk=bool_list[3],
+                           airborne=bool_list[4],
+                           aquatic=bool_list[5],
+                           predator=bool_list[6],
+                           teeth=bool_list[7],
+                           backbone=bool_list[8],
+                           breathes=bool_list[9],
+                           venomous=bool_list[10],
+                           fins=bool_list[11],
+                           legs=user_answers[12],
+                           tail=bool_list[13],
+                           domestic=bool_list[14],
+                           catsize=bool_list[15]
+                           )
 
 @app.route('/learnmore', methods=["POST"])
 def learnmore():
-    return render_template("index.html", reveal_data=True)
+    return render_template("index.html", reveal_data=True,
+                           )
 @app.route('/profile/<username>')
 def profile(username):
     return "Hey there %s" % username

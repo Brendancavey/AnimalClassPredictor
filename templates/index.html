@@ -8,11 +8,11 @@
     <body>
         <br>
         <form action="prediction" method="post">
-            <p>What type of animal are you? Pick your qualities below!</p>
+            <h1><p>What type of animal are you? Pick your qualities below!</p></h1>
             <br>
             <fieldset>
                 <legend>Choose your animal qualities</legend>
-                <p>(Check all boxes that apply)</p>
+                <p>(Answer all boxes)</p>
 
                     <div id="animalfeatures">
                         <label for="hair" >Has Hair</label>
@@ -119,73 +119,89 @@
                     {{reveal_msg}}
                 </legend>
                 {% for animal in predicted_list %}
-                    <li>{{animal}}</li>
+                    <div class="container">
+                        <img src="/static/images/{{animal}}.png">
+                        <div class="text-block">
+                            <h4>{{animal}}</h4>
+                        </div>
+                    </div>
                 {% endfor %}
             </fieldset>
             <br>
             {% if reveal_traits %}
             <fieldset>
                 <legend>Chosen Traits</legend>
-
                 {% if hair %}
                     <!--<img src="/static/images/hair.png">-->
                     <li>Has Hair</li>
-
+                {% else %}
+                    <li>Has No Hair</li>
                 {% endif %}
                 {% if feathers %}
                     <!--<img src="/static/images/feathers.png">-->
                      <li>Has Feathers</li>
-
+                {% else %}
+                    <li>Has No Feathers</li>
                 {% endif %}
                 {% if eggs %}
                     <!--<img src="/static/images/eggs.png">-->
                      <li>Produces Eggs</li>
-
+                {% else %}
+                    <li>Produces No Eggs</li>
                 {% endif %}
                 {% if milk %}
                     <!--<img src="/static/images/milk.png">-->
                      <li>Produces Milk</li>
-
+                {% else %}
+                    <li>Produces No Milk</li>
                 {% endif %}
                 {% if airborne %}
                     <!--<img src="/static/images/airborne.png">-->
                      <li>Can Fly</li>
-
+                {% else %}
+                    <li>Cannot Fly</li>
                 {% endif %}
                 {% if aquatic %}
                     <!--<img src="/static/images/aquatic.png">-->
                      <li>Is Aquatic </li>
-
+                {% else %}
+                    <li>Is Not Aquatic</li>
                 {% endif %}
                 {% if predator %}
                     <!--<img src="/static/images/predator.png">-->
                      <li>Is A Predator</li>
-
+                {% else %}
+                    <li>Is Not A Predator</li>
                 {% endif %}
                 {% if teeth %}
                     <!--<img src="/static/images/toothed.png">-->
                      <li>Has Teeth</li>
-
+                {% else %}
+                    <li>Does Not Have Teeth</li>
                 {% endif %}
                 {% if backbone %}
                     <!--<img src="/static/images/backbone.png">-->
                      <li>Has A Backbone</li>
-
+                {% else %}
+                    <li>Does Not Have Backbone</li>
                 {% endif %}
                 {% if breathes %}
                     <!--<img src="/static/images/breathes.png">-->
                      <li>Can Breathe Air</li>
-
+                {% else %}
+                    <li>Does Not Breathe Air</li>
                 {% endif %}
                 {% if venomous %}
                     <!--<img src="/static/images/venomous.png">-->
                      <li>Is Venomous</li>
-
+                {% else %}
+                    <li>Is Not Venomous</li>
                 {% endif %}
                 {% if fins %}
                     <!--<img src="/static/images/fins.png">-->
                      <li>Has Fins</li>
-
+                {% else %}
+                    <li>Has No Fins</li>
                 {% endif %}
 
                      <li>Has {{legs}} legs</li>
@@ -194,17 +210,20 @@
                 {% if tail %}
                     <!--<img src="/static/images/tail.png">-->
                      <li>Has Tail</li>
-
+                {% else %}
+                    <li>Has No Tail</li>
                 {% endif %}
                 {% if domestic %}
                     <!--<img src="/static/images/domestic.png">-->
                      <li>Is Domestic</li>
-
+                {% else %}
+                    <li>Is Not Domestic</li>
                 {% endif %}
                 {% if catsize %}
                     <!--<img src="/static/images/domestic.png">-->
                      <li>Is Catsize</li>
-
+                {% else %}
+                    <li>Is Not Catsize</li>
                 {% endif %}
             </fieldset>
             {% endif %}
